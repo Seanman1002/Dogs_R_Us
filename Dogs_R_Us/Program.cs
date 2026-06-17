@@ -18,21 +18,27 @@ double minWeight = randomWeight[0];
 double maxWeight = randomWeight[1];
 double dynamicWeight = minWeight + (random.NextDouble() * (maxWeight - minWeight));
 
-Dogs.Dog randomPatient = new Dogs.Dog()
+List<Dogs.Dog> patientList = new List<Dogs.Dog>();
+
+for (int i = 0; i < 15; i++)
 {
-    Breed = randomBreeds[random.Next(randomBreeds.Length)],
-    Name = randomNames[random.Next(randomNames.Length)],
-    Weight = Math.Round(dynamicWeight, 1), // Rounds the decimal to 1 place (e.g., 42.5)
-    Age = random.Next(randomAge[0], randomAge[1] + 1) // +1 makes 18 inclusive
-};
 
-// --- PRINT RANDOM PATIENT ---
-Console.WriteLine($"Admitted: {randomPatient.Name}");
-Console.WriteLine($"Weight is: {randomPatient.Weight} Pounds");
-Console.WriteLine($"Age of Patient is: {randomPatient.Age}");
-Console.WriteLine($"The Breed of the Patient is a: {randomPatient.Breed}");
-randomPatient.Bark();
 
+    Dogs.Dog randomPatient = new Dogs.Dog()
+    {
+        Breed = randomBreeds[random.Next(randomBreeds.Length)],
+        Name = randomNames[random.Next(randomNames.Length)],
+        Weight = Math.Round(dynamicWeight, 1), // Rounds the decimal to 1 place (e.g., 42.5)
+        Age = random.Next(randomAge[0], randomAge[1] + 1) // +1 makes 18 inclusive
+    };
+
+    // --- PRINT RANDOM PATIENT ---
+    Console.WriteLine($"Admitted: {randomPatient.Name}");
+    Console.WriteLine($"Weight is: {randomPatient.Weight} Pounds");
+    Console.WriteLine($"Age of Patient is: {randomPatient.Age}");
+    Console.WriteLine($"The Breed of the Patient is a: {randomPatient.Breed}");
+    randomPatient.Bark();
+}
 
 
 
